@@ -1,0 +1,262 @@
+:root {
+  --blue: #1e3a8a;      /* blue for text */
+  --blue-btn: #1e3a8a;  /* blue for buttons */
+  --red-btn: #dc2626;  /* red for buttons */
+  --red: #dc2626;
+  --bg: #f9fafb;
+  --text: #111827;
+  --card: #ffffff;
+}
+
+body.dark {
+  --bg: #111827;
+  --text: #f9fafb;
+  --card: #1f2937;
+  --blue: #dc2626;          /* red text in dark mode */
+  --blue-btn: #1e3a8a; 
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h1 .blue {
+  color: var(--blue);
+}
+
+h1 .red {
+  color: var(--red);
+}
+
+#darkModeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button-return {
+  margin-bottom: 2rem;
+  align-content: center;
+}
+
+.button-grid button {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.blue-btn {
+  background-color: var(--blue-btn);
+}
+
+.red-btn {
+  background-color: var(--red);
+}
+
+.button-grid button:hover {
+  opacity: 0.85;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+th, td {
+  border: 1px solid var(--text);
+  padding: 0.75rem;
+}
+
+th {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.socials i {
+  font-size: 1.8rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socials i:hover {
+  transform: scale(1.1);
+  color: var(--blue);
+}
+
+/* --- Team Grid --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background-color: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+  margin-bottom: 1rem;
+}
+
+.team-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.team-card .role {
+  font-weight: bold;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.team-card .about {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-card .fun-fact {
+  font-size: 0.9rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.logo-top {
+  text-align: center;       /* center the content */
+  margin: 2rem 0;           /* space above and below */
+}
+
+.team-logo {
+  width: 150px;             /* adjust as needed */
+  height: auto;
+  border-radius: 12px;
+  padding: 10px;     /* optional rounded corners */
+}
+
+/* Dark mode adjustment if needed */
+body.dark .team-logo {
+  border-color: var(--text);
+}
+
+.custom-line {
+  border: none;          /* remove default border */
+  height: 2px;           /* thickness */
+  background-color: #1e3a8a; /* color */
+  margin: 20px 0;        /* spacing above and below */
+  width: 80%;            /* length of the line */
+  margin-left: auto;      /* center it */
+  margin-right: auto;
+}
+
+/* Back Home Button Styling */
+.btn-red {
+  background-color: var(--red);   /* red background */
+  color: white;                    /* white text */
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;        /* slightly smaller than main buttons */
+  border: 2px solid var(--red);   /* accent border */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Hover effect */
+.btn-red:hover {
+  background-color: white;
+  color: var(--red);
+  border-color: var(--red);
+  transform: scale(1.05);
+}
+
+/* Dark mode adjustments */
+body.dark .btn-red {
+  border-color: var(--red);
+}
+
+body.dark .btn-red:hover {
+  background-color: var(--red);
+  color: white;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: invert(0); /* default for light mode */
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Dark mode inversion */
+body.dark .social-icon {
+  filter: invert(1); /* black → white in dark mode */
+}
+
+
