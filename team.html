@@ -14,29 +14,56 @@
     <img src="images/TEAM_1596_Logo.jpg" alt="Team 1596 Logo" class="team-logo">
     
     <h1><span class="red">Meet the Team!</span></span></h1>
+    <p>Get to know the amazing members of Team 1596!</p>
 
-    
     <!-- Team Grid -->
     <div class="team-grid">
         <!-- Repeat this block for each member -->
-        <div class="team-card">
-            <img src="images/member1.jpg" alt="Member 1">
-            <h3>Member</h3>
-            <p class="role">Role</p>
-            <p class="about">About me...</p>
-            <p class="fun-fact"><strong>Fun Fact:</strong> Random fun fact!</p>
+        <div 
+            class="team-card" 
+            data-years="3" 
+            data-favorite="Favorite part of robotics" 
+            data-memory="Favorite memory"
+            data-fun="Fun fact!"
+        >
+        <img src="images/member1.jpg" alt="Member 1">
+        <h3>Name</h3>
+        <p class="role">ROLE</p>
+        <p class="about">ABOUT ME.</p>
         </div>
-        
-        <div class="team-card">
-            <img src="images/member2.jpg" alt="Member 2">
-            <h3>Another member</h3>
-            <p class="role">Role</p>
-            <p class="about">About me...</p>
-            <p class="fun-fact"><strong>Fun Fact:</strong> Random fun fact!</p>
+
+        <div 
+            class="team-card" 
+            data-years="3" 
+            data-favorite="Favorite part of robotics is..." 
+            data-memory="Favorite memory is..."
+            data-fun="Fun fact!"
+        >
+        <img src="images/member1.jpg" alt="Member 1">
+        <h3>Name 2</h3>
+        <p class="role">ROLE</p>
+        <p class="about">ABOUT ME.</p>
         </div>
-        
+
         <!-- ADD MORE MEMBERS HERE -->
         <!-- Each card has the same structure -->
+
+
+
+
+
+
+        <!-- Modal for Click and Expand -->
+        <div id="memberModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="modalImg" src="" alt="Team Member">
+                <h3 id="modalName"></h3>
+                <p id="modalRole"></p>
+                <p id="modalAbout"></p>
+                <p id="modalFunFact"></p>
+            </div>
+        </div>
     </div>
     <!-- Back Button -->
     <button class="btn-red" onclick="goToPage('index.html')">⬅️ Back Home</button>
