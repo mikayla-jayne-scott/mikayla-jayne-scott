@@ -38,7 +38,7 @@ document.querySelectorAll('.team-card').forEach(card => {
     // Fill in modal with card data
     modalImg.src = card.querySelector('img').src;
     modalName.textContent = card.querySelector('h3').textContent;
-    modalRole.textContent = "Role: " + card.querySelector('.role').textContent;
+    modalRole.textContent = card.querySelector('.role').textContent;
     modalAbout.textContent = card.querySelector('.about').textContent;
 
     // 🧭 Create and insert the divider (only once per open)
@@ -51,7 +51,7 @@ document.querySelectorAll('.team-card').forEach(card => {
     extraHTML.classList.add('extra-info');
     extraHTML.innerHTML = `
       <p><strong>Years on Team:</strong> ${card.dataset.years || '—'}</p>
-      <p><strong>Favorite Subsystem:</strong> ${card.dataset.favorite || '—'}</p>
+      <p><strong>Favorite Part of Robotics:</strong> ${card.dataset.favorite || '—'}</p>
       <p><strong>Favorite Memory:</strong> ${card.dataset.memory || '—'}</p>
       <p><strong>Fun Fact:</strong> ${card.dataset.fun || '—'}</p>
 
