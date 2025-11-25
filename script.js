@@ -1,6 +1,5 @@
 const toggle = document.getElementById("darkModeToggle");
 
-// 🧠 Load theme preference on page load
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
   toggle.textContent = "☀️ Light Mode";
@@ -8,7 +7,6 @@ if (localStorage.getItem("theme") === "dark") {
   toggle.textContent = "🌙 Dark Mode";
 }
 
-// 🌗 Toggle dark mode and save preference
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   const isDark = document.body.classList.contains("dark");
