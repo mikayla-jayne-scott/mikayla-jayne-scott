@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Season Progress - Team 1596</title>
+        
+        <link rel="stylesheet" href="style.css">  <!-- Your main theme -->
+        <link rel="stylesheet" href="progress.css"> <!-- Optional: styles specific to this page -->
+    </head>
+
+<body>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+
+    <div class="container">
+
+        <!-- ======  ADD LOGO HERE ====== -->
+        <img src="images/?" alt="Team 1596 Logo" class="team-logo">
+
+        <!-- ====== ADD DESCRIPTION AND TITLE HERE ======  -->
+        <h1><span class="red">ADD A TITLE HERE</span></h1>
+        <p>ADD A DESCRIPTION HERE!</p>
+
+
+        <!-- ====== PROGRESS ENTRY TEMPLATE ====== -->
+        <div class="progress-entry">
+            <img src="images/progress/sample1.jpg" alt="Progress Update Image">
+
+            <div class="progress-content">
+                <h2 class="entry-title">Title</h2>
+
+                <p class="entry-body">
+                    Blah blah blah Blah blah blah Blah blah blahBlah blah blah Blah blah blah
+                </p>
+
+                <p class="entry-meta">Date: Jan 24, 2025 | Author: Someone </p>
+            </div>
+        </div>
+
+        <!-- ====== CODE A REVERSE BLOCK ====== -->
+
+
+
+
+
+
+        <!-- ====== Return Home Button ====== -->
+        <div class="center" style="margin-bottom: 20px;">
+            <button class="btn-red" onclick="goToPage('index.html')">⬅️ Back Home</button>
+        </div>
+
+        <!-- ====== SOCIAL MEDIA ICONS ====== -->
+        <div class="socials">
+            <a href="https://www.facebook.com/frc1596#" target="_blank">
+                <img src="images/socials/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+
+            <a href="https://www.instagram.com/frc1596/" target="_blank">
+                <img src="images/socials/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+
+            <a href="https://www.tiktok.com/@instigators_1596" target="_blank">
+                <img src="images/socials/tiktok.png" alt="TikTok" class="social-icon">
+            </a>
+
+            <a href="https://www.youtube.com/instigators1596" target="_blank">
+                <img src="images/socials/youtube.png" alt="YouTube" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("darkModeToggle");
+
+      if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+          toggle.textContent = "☀️ Light Mode";
+      }
+
+      toggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark");
+          const dark = document.body.classList.contains("dark");
+          localStorage.setItem("theme", dark ? "dark" : "light");
+          toggle.textContent = dark ? "☀️ Light Mode" : "🌙 Dark Mode";
+      });
+
+      function goToPage(page) {
+        window.location.href = page;
+    }
+
+    </script>
+
+</body>
+</html>
