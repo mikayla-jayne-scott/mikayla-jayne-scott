@@ -15,19 +15,22 @@
     <div class="container">
 
         <!-- ======  ADD LOGO HERE ====== -->
-        <img src="images/?" alt="Team 1596 Logo" class="team-logo">
+        <img src="images\TEAM_1596_Logo.jpg" alt="Team 1596 Logo" class="team-logo">
 
         <!-- ====== ADD DESCRIPTION AND TITLE HERE ======  -->
-        <h1><span class="red">ADD A TITLE HERE</span></h1>
-        <p>ADD A DESCRIPTION HERE!</p>
+        <h1><span class="red">Team Progress</span></h1>
+        <p>Check out our progress during build season!</p>
 
 
         <!-- ====== PROGRESS ENTRY TEMPLATE ====== -->
         <div class="progress-entry">
-            <img src="images/progress/sample1.jpg" alt="Progress Update Image">
-
+            <!-- Slideshow container -->
+            <div class="carousel">
+                <img src="images\Progress\weekone\IMG_8628.webp">
+                <img src="images\Progress\weekone\IMG_8630.webp">
+            </div>
             <div class="progress-content">
-                <h2 class="entry-title">Title</h2>
+                <h2 class="entry-title">Week one progress</h2>
 
                 <p class="entry-body">
                     Blah blah blah Blah blah blah Blah blah blahBlah blah blah Blah blah blah
@@ -92,3 +95,14 @@
 
 </body>
 </html>
+<script>
+    const images = document.querySelectorAll(".carousel .team-logo");
+let current = 0;
+
+setInterval(() => {
+  images[current].classList.remove("active");
+  current = (current + 1) % images.length;
+  images[current].classList.add("active");
+}, 3000);
+
+</script>
