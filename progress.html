@@ -125,15 +125,31 @@ modal.onclick = e => {
 
 
 <script>
-    const images = document.querySelectorAll(".carousel .carousel-image");
-let current = 0;
+const carousels = document.querySelectorAll(".carousel");
 
-setInterval(() => {
-  images[current].classList.remove("active");
-  current = (current + 1) % images.length;
-  images[current].classList.add("active");
-}, 3000);
+carousels.forEach(carousel => {
+  const images = carousel.querySelectorAll(".carousel-image");
+  let current = 0;
+
+  // ensure first image is visible immediately
+  images.forEach(img => img.classList.remove("active"));
+  images[0].classList.add("active");
+
+  // enable transitions AFTER first paint
+  requestAnimationFrame(() => {
+    carousel.classList.add("ready");
+  });
+
+  if (images.length > 1) {
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 3000);
+  }
+});
 
 </script>
 </body>
 </html>
+
