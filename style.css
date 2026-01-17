@@ -332,7 +332,55 @@ body.dark .modal-content strong {
   margin: 1rem 0;
 }
 
-/* Optional dark mode tweak */
+/* Progress Page Layout */
+.progress-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 40px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.progress-entry img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.progress-content {
+  flex: 1;
+}
+
+.entry-title {
+  margin: 0;
+  color: #d32f2f; 
+}
+
+.entry-body {
+  margin: 10px 0;
+}
+
+.entry-meta {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Mobile Friendly */
+@media(max-width: 700px) {
+  .progress-entry {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .progress-entry img {
+    width: 100%;
+  }
+}
+
 body.dark .modal-divider {
   background-color: var(--red);
   opacity: 0.6;
