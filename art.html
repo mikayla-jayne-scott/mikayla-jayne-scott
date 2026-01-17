@@ -2,41 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">  <!-- Reuse your main theme -->
-  <link rel="stylesheet" href="art.css">    <!-- Add any gallery-specific tweaks -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">  
+  <link rel="stylesheet" href="art.css"> 
 </head>
-
 <body>
-    <button id="darkModeToggle">🌙 Dark Mode</button>
     <div class="container">
+        <button id="darkModeToggle">🌙 Dark Mode</button>
         <!-- Logo -->
         <img src="images/TEAM_1596_Logo.jpg" alt="Team 1596 Logo" class="team-logo">
 
-        <h1><span class="red">Something Here!</span></span></h1>
-        <p>Another thing here!</p>
+        <h1><span class="red">Our Team's Artwork!</span></span></h1>
+        <p>Art that members of our team have drawn and submitted, click on a piece of art to know more about it and the artist that drew it</p>
         <main class="gallery">
             <!-- Example Artworks -->
         <div class="art-card" 
-            data-artist="NAME" 
-            data-description="A digital painting exploring the serenity of nature through cool tones."
+            data-artist="Kirsi" 
+            data-description="Reefscape Pin Design"
             data-year="2025"
-            data-medium="Digital Drawing"
+            data-medium="IBSPaintX"
             data-school="Sault Area High School">
-            <img src="https://picsum.photos/600/600?random=1" alt="Artwork 1">
-            <div class="art-overlay">NAME HERE</div>
+            <img src="C:\Users\first\frc-smart-window\images\art\ReefscapePinDesign.jpg" alt="Artwork 1">
+            <div class="art-overlay">Reefscape 2025</div>
         </div>
         
         <!-- Create other art cards here! -->
             <!-- Example Artworks -->
         <div class="art-card" 
-            data-artist="NAME" 
-            data-description="A digital painting exploring the serenity of nature through cool tones."
+            data-artist="Lily" 
+            data-description="2025 Rainbow Rumble pin design"
             data-year="2025"
-            data-medium="Painting"
+            data-medium="Digital Sketchbook"
             data-school="Sault Area High School">
-            <img src="https://picsum.photos/600/600?random=1" alt="Artwork 1">
-            <div class="art-overlay">NAME HERE</div>
+            <img src="C:\Users\first\frc-smart-window\images\art\RainbowRumble2025Pin.png" alt="Artwork 1">
+            <div class="art-overlay">Rainbow Rumble Pin</div>
         </div>
         
         <!-- Modal -->
@@ -54,13 +53,14 @@
                 </div>
             </div>
         </div>
+        
+        <div style="align-items: center;"> 
+            <button class="btn-red" goToPage('index.html')">⬅️ Back Home</button>
+        </div>
 
-        <!-- BACK BUTTON HERE -->
-
-        <!-- Social media links here!-->
     </div>
         
-        <script>
+  <script>
             // --- Dark Mode Persistence ---
             const toggle = document.getElementById("darkModeToggle");
             if (localStorage.getItem("theme") === "dark") {
@@ -100,6 +100,10 @@
             window.addEventListener("click", e => {
                 if (e.target === modal) modal.style.display = "none";
             });
+
+            function goToPage(page) {
+                window.location.href = page;
+            }
   </script>
 </body>
 </html>
