@@ -26,8 +26,8 @@
         <div class="progress-entry">
             <!-- Slideshow container -->
             <div class="carousel">
-                <img src="images\Progress\weekone\IMG_8628.webp">
-                <img src="images\Progress\weekone\IMG_8630.webp">
+                <img src="images/Progress/weekone/IMG_8628.webp" class="carousel-image active">
+                <img src="images/Progress/weekone/IMG_8630.webp" class="carousel-image">
             </div>
             <div class="progress-content">
                 <h2 class="entry-title">Week one progress</h2>
@@ -93,10 +93,8 @@
 
     </script>
 
-</body>
-</html>
 <script>
-    const images = document.querySelectorAll(".carousel .team-logo");
+    const images = document.querySelectorAll(".carousel .carousel-image");
 let current = 0;
 
 setInterval(() => {
@@ -106,3 +104,5 @@ setInterval(() => {
 }, 3000);
 
 </script>
+</body>
+</html>
