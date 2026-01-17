@@ -76,3 +76,6 @@
 .carousel.ready .carousel-image {
     transition: opacity 0.5s ease-in-out;
 }
+.data-descripton{
+    color:rgb(165, 127, 255);
+}
