@@ -33,6 +33,13 @@
                 <img src="images\Progress\weekone\71273177-F341-4657-894E-667FF8BA7CD2.webp" class="carousel-image">
                 <img src="images\Progress\weekone\526D6681-CA39-4C0F-AAD6-891E6FC22C67.webp" class="carousel-image">
                 <img src="images\Progress\weekone\9FBEBBC1-557F-457B-B4E8-891CA71BEEC5.webp" class="carousel-image">
+                <img src="images/Progress/weekone/IMG_8628.webp"
+                    class="carousel-image active"
+                    data-description="Week one: Example">
+
+                <img src="images/Progress/weekone/IMG_8630.webp"
+                    class="carousel-image"
+                    data-description="Week one: Example">
             </div>
             <div class="progress-content">
                 <h2 class="entry-title">Week one progress</h2>
@@ -77,26 +84,31 @@
         </div>
     </div>
 
-    <script>
-      const toggle = document.getElementById("darkModeToggle");
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-img">
+  <p class="modal-caption"></p>
+</div>
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = modal.querySelector(".modal-img");
+const caption = modal.querySelector(".modal-caption");
+const closeBtn = modal.querySelector(".close");
 
-      if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark");
-          toggle.textContent = "☀️ Light Mode";
-      }
+document.querySelectorAll(".carousel-image").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    caption.textContent = img.dataset.description || "";
+  });
+});
 
-      toggle.addEventListener("click", () => {
-          document.body.classList.toggle("dark");
-          const dark = document.body.classList.contains("dark");
-          localStorage.setItem("theme", dark ? "dark" : "light");
-          toggle.textContent = dark ? "☀️ Light Mode" : "🌙 Dark Mode";
-      });
+closeBtn.onclick = () => modal.style.display = "none";
+modal.onclick = e => {
+  if (e.target === modal) modal.style.display = "none";
+};
+</script>
 
-      function goToPage(page) {
-        window.location.href = page;
-    }
-
-    </script>
 
 <script>
     const images = document.querySelectorAll(".carousel .carousel-image");
