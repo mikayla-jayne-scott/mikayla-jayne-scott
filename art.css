@@ -114,6 +114,7 @@ body.dark .modal-content {
     width: 100%;
     border-radius: 12px;
     margin-bottom: 1rem;
+    height: auto;
 }
 
 .close {

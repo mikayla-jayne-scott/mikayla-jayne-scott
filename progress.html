@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Season Progress - Team 1596</title>
         
-        <link rel="stylesheet" href="style.css">  <!-- Your main theme -->
-        <link rel="stylesheet" href="progress.css"> <!-- Optional: styles specific to this page -->
-    </head>
+        <link rel="stylesheet" href="style.css">  
+        <link rel="stylesheet" href="progress.css">
     <body>
     <div class="container">
         <button id="darkModeToggle">🌙 Dark Mode</button>
@@ -17,39 +16,37 @@
 
         <!-- ====== ADD DESCRIPTION AND TITLE HERE ======  -->
         <h1><span class="red">Team Progress</span></h1>
-        <p>Check out our progress during our 2026 build season!</p>
+        <p>Check out our progress during our 2026 build season! Click on the images to find out more.</p>
 
-
-        <!-- ====== PROGRESS ENTRY TEMPLATE ====== -->
+        <!-- ====== PROGRESS ENTRY  ====== -->
         <div class="progress-entry">
             <!-- Slideshow container -->
             <div class="carousel">
               
-
                 <img src="images/Progress/weekone/IMG_8630.webp"
                     class="carousel-image"
-                    data-description="Kickoff and game strategies.">
+                    data-description="Reviewing kickoff and discussing game strategies.">
            
 
                     <img src="images\Progress\weekone\E9A0399A-62B5-4AF2-8BA2-A42F4F9870EC.webp"
                     class="carousel-image"
-                    data-description="Making a prototype for the cannon">
+                    data-description="Engineering a prototype for the cannon.">
 
               <img src="images\Progress\weekone\ADBA15E8-4EBC-4FC2-9C06-75828AE48D3F.webp"
                     class="carousel-image"
-                    data-description="installing new code software for 2026.">
+                    data-description="Installing new code software for 2026 and updating libraries.">
 
               <img src="images\Progress\weekone\71273177-F341-4657-894E-667FF8BA7CD2.webp"
                     class="carousel-image"
-                    data-description="building the chassis">
+                    data-description="Building the chassis of the robot.">
 
               <img src="images\Progress\weekone\526D6681-CA39-4C0F-AAD6-891E6FC22C67.webp"
                     class="carousel-image"
-                    data-description="building the hub.">
+                    data-description="Building the hub.">
 
               <img src="images\Progress\weekone\9FBEBBC1-557F-457B-B4E8-891CA71BEEC5.webp"
                     class="carousel-image"
-                    data-description="building the trench.">
+                    data-description="Building the trench.">
 
             
             </div>
@@ -68,12 +65,35 @@
             </div>
         </div>
 
-        <!-- ====== CODE A REVERSE BLOCK ====== -->
+        <!-- ====== REVERSE BLOCK ====== -->
+        <div class="progress-entry reverse">
+            <!-- Slideshow container -->
+            
+            <div class="progress-content">
+              <h2 class="entry-title">Week Two Progress</h2>
+              
+              <p class="entry-body">
+                During week two....
+              </p>
+              
+              <p class="entry-meta">
+                Date: Jan XX, 2026 | Author:
+              </p>
+            </div>
+            <div class="carousel">
+                <img src="images/Progress/weektwo/img1.webp"
+                    class="carousel-image"
+                    data-description="...">
 
+                <img src="images/Progress/weektwo/img2.webp"
+                    class="carousel-image"
+                    data-description="...">
 
-
-
-
+                <img src="images/Progress/weektwo/img3.webp"
+                    class="carousel-image"
+                    data-description="...">
+            </div>
+        </div>
 
         <!-- ====== Return Home Button ====== -->
          <div class="center" style="margin-bottom: 20px;">
@@ -101,12 +121,15 @@
     </div>
 
 <div id="imageModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-img">
-  <p class="modal-caption"></p>
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img class="modal-img">
+    <p class="modal-caption"></p>
+  </div>
 </div>
+
 <script>
-const modal = document.getElementById("modal");
+const modal = document.getElementById("imageModal");
 const modalImg = modal.querySelector(".modal-img");
 const caption = modal.querySelector(".modal-caption");
 const closeBtn = modal.querySelector(".close");
@@ -119,39 +142,23 @@ document.querySelectorAll(".carousel-image").forEach(img => {
   });
 });
 
-closeBtn.onclick = () => modal.style.display = "none";
-modal.onclick = e => {
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+modal.addEventListener("click", e => {
   if (e.target === modal) modal.style.display = "none";
-};
-</script>
+});
 
-
-<script>
 const carousels = document.querySelectorAll(".carousel");
 
 carousels.forEach(carousel => {
   const images = carousel.querySelectorAll(".carousel-image");
   let current = 0;
 
-  // ensure first image is visible immediately
   images.forEach(img => img.classList.remove("active"));
   images[0].classList.add("active");
 
-
-   // --- Dark Mode Persistence ---
-            const toggle = document.getElementById("darkModeToggle");
-            if (localStorage.getItem("theme") === "dark") {
-                document.body.classList.add("dark");
-                toggle.textContent = "☀️ Light Mode";
-            }
-            toggle.addEventListener("click", () => {
-                document.body.classList.toggle("dark");
-                const dark = document.body.classList.contains("dark");
-                localStorage.setItem("theme", dark ? "dark" : "light");
-                toggle.textContent = dark ? "☀️ Light Mode" : "🌙 Dark Mode";
-            });
-
-  // enable transitions AFTER first paint
   requestAnimationFrame(() => {
     carousel.classList.add("ready");
   });
@@ -164,6 +171,25 @@ carousels.forEach(carousel => {
     }, 3000);
   }
 });
+
+// ---------- Dark Mode----------
+const toggle = document.getElementById("darkModeToggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  toggle.textContent = "☀️ Light Mode";
+} else {
+  toggle.textContent = "🌙 Dark Mode";
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  const dark = document.body.classList.contains("dark");
+  localStorage.setItem("theme", dark ? "dark" : "light");
+  toggle.textContent = dark ? "☀️ Light Mode" : "🌙 Dark Mode";
+});
+
 function goToPage(page) {
     window.location.href = page;
        }

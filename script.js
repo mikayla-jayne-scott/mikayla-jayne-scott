@@ -1,20 +1,24 @@
 const toggle = document.getElementById("darkModeToggle");
 
-// 🧠 Load theme preference on page load
-if (localStorage.getItem("theme") === "dark") {
+// 🧠 Load theme preference
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
   document.body.classList.add("dark");
-  toggle.textContent = "☀️ Light Mode";
-} else {
-  toggle.textContent = "🌙 Dark Mode";
 }
 
-// 🌗 Toggle dark mode and save preference
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  const isDark = document.body.classList.contains("dark");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-  toggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
-});
+if (toggle) {
+  toggle.textContent = savedTheme === "dark"
+    ? "☀️ Light Mode"
+    : "🌙 Dark Mode";
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    toggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+  });
+}
 
 function goToPage(page) {
   window.location.href = page;
