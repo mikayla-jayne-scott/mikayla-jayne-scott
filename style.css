@@ -250,6 +250,13 @@ body.dark .btn-red:hover {
   filter: invert(0); /* default for light mode */
 }
 
+.school-icon {
+  width: 250px;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: invert(0); /* default for light mode */
+}
+
 .social-icon:hover {
   transform: scale(1.2);
 }
@@ -384,6 +391,53 @@ body.dark .modal-content strong {
 body.dark .modal-divider {
   background-color: var(--red);
   opacity: 0.6;
+}
+
+/* Sponsor Ribbon */
+.sponsor-ribbon {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+  position: relative;
+}
+
+.sponsor-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.sponsor-track img {
+  height: 60px;
+  margin: 0 40px;
+  object-fit: contain;
+  transition: transform 1s ease;
+}
+
+.sponsor-track img:hover {
+  transform: scale(1.1);
+}
+
+body.dark .sponsor-ribbon {
+  background: #1f2937; /* dark background */
+  border-bottom: 2px solid #444;
+}
+
+/* Dark mode sponsor logos */
+body.dark .sponsor-track img {
+  filter: invert(1) brightness(2);
+}
+
+/* Scrolling Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Small pop animation */
