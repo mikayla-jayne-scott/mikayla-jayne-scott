@@ -445,3 +445,24 @@ body.dark .sponsor-track img {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+.table-container{
+  width:100%;
+  overflow-x:auto;   /* allows horizontal scroll on small screens */
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:700px;   /* prevents columns from collapsing too much */
+}
+
+th, td{
+  padding:8px;
+  text-align:center;
+  border:1px solid #ccc;
+}
+
+thead{
+  background:#f4f4f4;
+}
