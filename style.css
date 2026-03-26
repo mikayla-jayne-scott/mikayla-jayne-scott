@@ -222,6 +222,7 @@ body.dark .team-logo {
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   margin-top: 1rem;
   display: inline-block;
+  height: 8rem;
 }
 
 /* Hover effect */
@@ -314,7 +315,7 @@ body.dark .modal-content strong {
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: var(--text);
   cursor: pointer;
   transition: color 0.2s;
